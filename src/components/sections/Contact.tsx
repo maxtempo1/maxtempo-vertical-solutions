@@ -114,15 +114,15 @@ const Contact = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-navy" />
-                  <span>+48 500 123 456</span>
+                  <span>+48 794 453 768</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-navy" />
-                  <span>kontakt@maxtempo.pl</span>
+                  <span>alfaroupmasters@gmail.com</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-navy shrink-0" />
-                  <span>Warszawa, ul. Przemysłowa 21</span>
+                  <span>Warszawa, ul. Kłobucka 8b, 02-699</span>
                 </div>
               </div>
             </div>
@@ -141,7 +141,7 @@ const Contact = () => {
 
             <div className="h-64 w-full border border-gray-200 rounded-lg overflow-hidden">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156388.35439533268!2d20.896111446445854!3d52.23303857575702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarszawa!5e0!3m2!1spl!2spl!4v1680262404355!5m2!1spl!2spl" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2445.591192369952!2d21.00148791580982!3d52.173910979749515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4719337c61eca3e9%3A0x66ce40ca1b13a6c1!2sK%C5%82obucka%208B%2C%2002-699%20Warszawa!5e0!3m2!1spl!2spl!4v1655051248930!5m2!1spl!2spl" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 

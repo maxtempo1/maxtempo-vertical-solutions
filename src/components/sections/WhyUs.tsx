@@ -17,7 +17,7 @@ const advantages = [
   },
   {
     id: 2,
-    title: "Certyfikat IRATA Level 2",
+    title: "Certyfikat IRATA Level 3",
     description: "Międzynarodowe certyfikaty potwierdzające najwyższe umiejętności.",
     icon: <Award size={36} className="text-navy" />
   },

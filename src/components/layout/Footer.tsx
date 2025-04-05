@@ -43,9 +43,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
             <address className="not-italic text-gray-300 space-y-2">
-              <p>Warszawa, ul. Przemysłowa 21</p>
-              <p>kontakt@maxtempo.pl</p>
-              <p>+48 500 123 456</p>
+              <p>Warszawa, ul. Kłobucka 8b, 02-699</p>
+              <p>alfaroupmasters@gmail.com</p>
+              <p>+48 794 453 768</p>
             </address>
           </div>
         </div>
