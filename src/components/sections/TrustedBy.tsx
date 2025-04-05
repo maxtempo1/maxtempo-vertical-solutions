@@ -2,11 +2,31 @@
 import { useState, useEffect, useRef } from 'react';
 
 const clients = [
-  { id: 1, name: 'Klient 1', logo: 'https://via.placeholder.com/150x80?text=Logo+1' },
-  { id: 2, name: 'Klient 2', logo: 'https://via.placeholder.com/150x80?text=Logo+2' },
-  { id: 3, name: 'Klient 3', logo: 'https://via.placeholder.com/150x80?text=Logo+3' },
-  { id: 4, name: 'Klient 4', logo: 'https://via.placeholder.com/150x80?text=Logo+4' },
-  { id: 5, name: 'Klient 5', logo: 'https://via.placeholder.com/150x80?text=Logo+5' },
+  { 
+    id: 1, 
+    name: 'John Lewis', 
+    logo: '/lovable-uploads/5228aa25-85ac-4bd0-8328-f4cea5702b4d.png'
+  },
+  { 
+    id: 2, 
+    name: 'Nike', 
+    logo: '/lovable-uploads/676a098b-789c-493a-bfb4-4ed6e59a9efe.png'
+  },
+  { 
+    id: 3, 
+    name: 'Apple', 
+    logo: '/lovable-uploads/a023e892-f9c0-47cb-908a-5f8af3704c27.png'
+  },
+  { 
+    id: 4, 
+    name: 'Mecca', 
+    logo: '/lovable-uploads/fb10ed28-8f36-47ab-bdcc-e6aacb18bd24.png'
+  },
+  { 
+    id: 5, 
+    name: 'Netflix', 
+    logo: '/lovable-uploads/c716e69d-37e5-4ef7-b739-87c3696adab6.png'
+  },
 ];
 
 const TrustedBy = () => {
@@ -43,7 +63,7 @@ const TrustedBy = () => {
               <img 
                 src={client.logo} 
                 alt={client.name} 
-                className="max-h-20 grayscale hover:grayscale-0 transition-all duration-300"
+                className="max-h-16 grayscale hover:grayscale-0 transition-all duration-300"
               />
             </div>
           ))}

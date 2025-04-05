@@ -2,43 +2,62 @@
 import { useState, useEffect, useRef } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { X } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
 
 const projects = [
   {
     id: 1,
-    title: "Mycie elewacji biurowca",
-    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
-    description: "Kompleksowe czyszczenie fasady nowoczesnego biurowca o powierzchni 5000m²."
+    title: "Montaż reklamy Love Island",
+    image: "/lovable-uploads/1bcaa0ac-1c99-4e82-b97c-1d6f0bd13ad2.png",
+    description: "Montaż wielkopowierzchniowej reklamy kampanii programu telewizyjnego na fasadzie centrum handlowego."
   },
   {
     id: 2,
-    title: "Montaż konstrukcji reklamowej",
-    image: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
-    description: "Instalacja wielkopowierzchniowej konstrukcji reklamowej na wysokości 40m."
+    title: "Instalacja billboardu Carling",
+    image: "/lovable-uploads/35be7674-09d4-43d2-8962-d837c24a97b8.png",
+    description: "Instalacja i zabezpieczenie wielkopowierzchniowej reklamy piwa na wysokości 25m."
   },
   {
     id: 3,
-    title: "Malowanie hali przemysłowej",
-    image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
-    description: "Malowanie zabezpieczające elementów konstrukcyjnych hali produkcyjnej."
+    title: "Reklama Nike na budynku",
+    image: "/lovable-uploads/676a098b-789c-493a-bfb4-4ed6e59a9efe.png",
+    description: "Montaż oświetlonej reklamy Nike na wysokości 40m na fasadzie budynku w przebudowie."
   },
   {
     id: 4,
-    title: "Inspekcja techniczna wieżowca",
-    image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
-    description: "Kompleksowa inspekcja fasady wysokościowca z pełną dokumentacją."
+    title: "Billboard Apple na ulicy",
+    image: "/lovable-uploads/a023e892-f9c0-47cb-908a-5f8af3704c27.png",
+    description: "Montaż reklamy Apple dotyczącej prywatności iPhone na bilbordzie przy ruchliwej ulicy."
   },
   {
     id: 5,
-    title: "Odśnieżanie dachu centrum handlowego",
-    image: "https://images.unsplash.com/photo-1487887235947-a955ef187fcc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
-    description: "Usuwanie zalegającego śniegu i lodu z dachu o powierzchni 3000m²."
+    title: "Wielkoformatowe banery Caudalie",
+    image: "/lovable-uploads/212ce13f-f71a-4fad-89c6-70eb55e36d4f.png",
+    description: "Montaż dwóch wielkoformatowych banerów reklamowych na elewacji budynku mieszkalnego."
   },
   {
     id: 6,
-    title: "Naprawa rynien biurowca",
-    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
-    description: "Wymiana i naprawa uszkodzonych elementów systemu odwodnienia dachu."
+    title: "Billboardy przy drodze Anex",
+    image: "/lovable-uploads/521ad0a3-c5b5-425d-8df7-ad9a21c8e054.png",
+    description: "Kompleksowy montaż systemu banerów reklamowych przy drodze szybkiego ruchu."
+  },
+  {
+    id: 7,
+    title: "Reklama Mohito",
+    image: "/lovable-uploads/6c2b722b-4ac7-4988-bda1-94e8cf046ca8.png",
+    description: "Instalacja podświetlanej reklamy na elewacji budynku w centrum miasta."
+  },
+  {
+    id: 8,
+    title: "Montaż reklamy Romet",
+    image: "/lovable-uploads/f9b0d25c-7d37-462a-ae58-f7bb4f20d663.png",
+    description: "Instalacja baneru reklamowego dla marki rowerowej Romet na ścianie budynku."
+  },
+  {
+    id: 9,
+    title: "Reklama Netflix na centrum handlowym",
+    image: "/lovable-uploads/c716e69d-37e5-4ef7-b739-87c3696adab6.png",
+    description: "Montaż podświetlanej reklamy Netflix na elewacji centrum handlowego."
   },
 ];
 
@@ -74,7 +93,7 @@ const Projects = () => {
           {projects.map((project) => (
             <Dialog key={project.id}>
               <DialogTrigger asChild>
-                <div className="overflow-hidden rounded-lg shadow-md cursor-pointer group">
+                <Card className="overflow-hidden rounded-lg shadow-md cursor-pointer group hover:shadow-lg transition-shadow duration-300">
                   <div className="relative h-64 overflow-hidden">
                     <img 
                       src={project.image} 
@@ -87,10 +106,10 @@ const Projects = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="p-4 bg-white">
+                  <CardContent className="p-4 bg-white">
                     <h3 className="font-semibold text-lg mb-1">{project.title}</h3>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[600px] p-0 overflow-hidden">
                 <div className="relative">
