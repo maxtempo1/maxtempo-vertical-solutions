@@ -1,12 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from "react";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/sections/Hero";
+import TrustedBy from "@/components/sections/TrustedBy";
+import Services from "@/components/sections/Services";
+import WorkProcess from "@/components/sections/WorkProcess";
+import WhyUs from "@/components/sections/WhyUs";
+import Projects from "@/components/sections/Projects";
+import DownloadOffer from "@/components/sections/DownloadOffer";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/layout/Footer";
+import { setupScrollAnimation } from "@/utils/animation";
 
 const Index = () => {
+  useEffect(() => {
+    const cleanup = setupScrollAnimation();
+    
+    return () => {
+      if (cleanup) {
+        cleanup();
+      }
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Navbar />
+      <Hero />
+      <TrustedBy />
+      <Services />
+      <WorkProcess />
+      <WhyUs />
+      <Projects />
+      <DownloadOffer />
+      <Contact />
+      <Footer />
     </div>
   );
 };
