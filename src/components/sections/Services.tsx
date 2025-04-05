@@ -4,7 +4,7 @@ import {
   Droplets, 
   PaintBucket, 
   Wrench, 
-  Mountaintop,
+  Mountain,
   Snowflake, 
   Camera 
 } from 'lucide-react';
@@ -32,7 +32,7 @@ const services = [
     id: 4,
     title: "Montaż reklam i konstrukcji",
     description: "Instalacja ekranów reklamowych, systemów i konstrukcji na wysokościach.",
-    icon: <Mountaintop size={36} className="text-navy" />
+    icon: <Mountain size={36} className="text-navy" />
   },
   {
     id: 5,
