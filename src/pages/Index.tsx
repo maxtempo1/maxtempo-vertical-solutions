@@ -6,7 +6,6 @@ import TrustedBy from "@/components/sections/TrustedBy";
 import Services from "@/components/sections/Services";
 import WorkProcess from "@/components/sections/WorkProcess";
 import WhyUs from "@/components/sections/WhyUs";
-import Projects from "@/components/sections/Projects";
 import DownloadOffer from "@/components/sections/DownloadOffer";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
@@ -27,11 +26,10 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <TrustedBy />
       <Services />
       <WorkProcess />
       <WhyUs />
-      <Projects />
+      <TrustedBy />
       <DownloadOffer />
       <Contact />
       <Footer />
