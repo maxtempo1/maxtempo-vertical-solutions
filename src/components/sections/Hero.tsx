@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80')" }}>
       <div className="container mx-auto px-4 text-center">
@@ -18,10 +25,13 @@ const Hero = () => {
       </div>
       
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#zaufali-nam" className="text-white flex flex-col items-center">
+        <button 
+          onClick={() => scrollToSection('realizacje')} 
+          className="text-white flex flex-col items-center cursor-pointer bg-transparent border-none"
+        >
           <span className="mb-2">Dowiedz się więcej</span>
           <ChevronDown size={24} />
-        </a>
+        </button>
       </div>
     </section>
   );

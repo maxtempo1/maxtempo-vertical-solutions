@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Linkedin, Facebook } from 'lucide-react';
-import { toast } from '@/components/ui/use-toast';
+import { toast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -42,19 +42,51 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Wiadomość wysłana",
-        description: "Dziękujemy za kontakt. Odpowiemy najszybciej jak to możliwe.",
+    // Email content preparation
+    const emailContent = `
+      Name: ${formData.name}
+      Email: ${formData.email}
+      Message: ${formData.message}
+    `;
+    
+    try {
+      // Using emailjs-com service to send the email (You'd need to set up an EmailJS account)
+      const response = await fetch("https://formsubmit.co/ajax/kontakt@max-tempo.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
       });
-      setFormData({ name: '', email: '', message: '' });
-    }, 1000);
+      
+      if (response.ok) {
+        toast({
+          title: "Wiadomość wysłana",
+          description: "Dziękujemy za kontakt. Odpowiemy najszybciej jak to możliwe.",
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Błąd",
+        description: "Wystąpił problem podczas wysyłania wiadomości. Prosimy spróbować ponownie.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -118,7 +150,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-navy" />
-                  <span>alfaroupmasters@gmail.com</span>
+                  <span>kontakt@max-tempo.com</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-navy shrink-0" />
