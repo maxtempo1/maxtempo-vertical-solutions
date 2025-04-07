@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Linkedin, Facebook } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -157,30 +157,6 @@ const Contact = () => {
                   <span>Warszawa, ul. Kłobucka 8b, 02-699</span>
                 </div>
               </div>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-6">Social media</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="bg-navy text-white p-3 rounded-full hover:bg-navy-light transition-colors">
-                  <Linkedin size={20} />
-                </a>
-                <a href="#" className="bg-navy text-white p-3 rounded-full hover:bg-navy-light transition-colors">
-                  <Facebook size={20} />
-                </a>
-              </div>
-            </div>
-
-            <div className="h-64 w-full border border-gray-200 rounded-lg overflow-hidden">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2445.591192369952!2d21.00148791580982!3d52.173910979749515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4719337c61eca3e9%3A0x66ce40ca1b13a6c1!2sK%C5%82obucka%208B%2C%2002-699%20Warszawa!5e0!3m2!1spl!2spl!4v1655051248930!5m2!1spl!2spl" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
             </div>
           </div>
         </div>
