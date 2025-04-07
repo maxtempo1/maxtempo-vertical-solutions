@@ -24,7 +24,7 @@ const Hero = () => {
         </Button>
       </div>
       
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
         <button 
           onClick={() => scrollToSection('realizacje')} 
           className="text-white flex flex-col items-center cursor-pointer bg-transparent border-none"
