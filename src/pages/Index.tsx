@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
@@ -6,7 +5,6 @@ import TrustedBy from "@/components/sections/TrustedBy";
 import Services from "@/components/sections/Services";
 import WorkProcess from "@/components/sections/WorkProcess";
 import WhyUs from "@/components/sections/WhyUs";
-import DownloadOffer from "@/components/sections/DownloadOffer";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 import { setupScrollAnimation } from "@/utils/animation";
@@ -30,7 +28,6 @@ const Index = () => {
       <Services />
       <WorkProcess />
       <WhyUs />
-      <DownloadOffer />
       <Contact />
       <Footer />
     </div>

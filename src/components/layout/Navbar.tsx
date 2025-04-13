@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
@@ -39,7 +38,12 @@ const Navbar = () => {
           <a href="#jak-pracujemy" className="font-medium text-graphite hover:text-navy transition-colors">Jak pracujemy</a>
           <a href="#realizacje" className="font-medium text-graphite hover:text-navy transition-colors">Realizacje</a>
           <a href="#kontakt" className="font-medium text-graphite hover:text-navy transition-colors">Kontakt</a>
-          <Button className="bg-navy hover:bg-navy-light text-white">Zamów ofertę</Button>
+          <Button 
+            onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-navy hover:bg-navy-light text-white"
+          >
+            Zamów ofertę
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -56,7 +60,15 @@ const Navbar = () => {
             <a href="#jak-pracujemy" className="font-medium text-graphite py-2 border-b border-gray-100" onClick={handleMobileMenuToggle}>Jak pracujemy</a>
             <a href="#realizacje" className="font-medium text-graphite py-2 border-b border-gray-100" onClick={handleMobileMenuToggle}>Realizacje</a>
             <a href="#kontakt" className="font-medium text-graphite py-2 border-b border-gray-100" onClick={handleMobileMenuToggle}>Kontakt</a>
-            <Button className="bg-navy hover:bg-navy-light text-white w-full">Zamów ofertę</Button>
+            <Button 
+              onClick={() => {
+                document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' });
+                handleMobileMenuToggle(); // Close mobile menu after clicking
+              }}
+              className="bg-navy hover:bg-navy-light text-white w-full"
+            >
+              Zamów ofertę
+            </Button>
           </div>
         </div>
       )}

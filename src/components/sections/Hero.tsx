@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
@@ -19,7 +18,10 @@ const Hero = () => {
         <p className="text-white text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
           Profesjonalne usługi alpinistyczne dla firm i instytucji.
         </p>
-        <Button className="bg-navy hover:bg-navy-light text-white text-lg px-8 py-6">
+        <Button 
+          onClick={() => scrollToSection('kontakt')} 
+          className="bg-navy hover:bg-navy-light text-white text-lg px-8 py-6"
+        >
           Zamów ofertę
         </Button>
       </div>

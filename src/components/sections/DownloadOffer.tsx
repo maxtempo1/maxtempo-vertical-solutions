@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Download } from 'lucide-react';
@@ -35,18 +34,26 @@ const DownloadOffer = () => {
   return (
     <section className="py-20 bg-navy text-white" ref={sectionRef}>
       <div className={`container mx-auto px-4 text-center animate-on-scroll ${isVisible ? 'active' : ''}`}>
-        <h2 className="text-3xl font-bold mb-6">Pobierz ofertę PDF</h2>
+        <h2 className="text-3xl font-bold mb-6">Nasza Oferta</h2>
         <p className="text-lg mb-8 max-w-2xl mx-auto">
           Zapoznaj się z pełną ofertą naszych usług, referencjami i szczegółami współpracy.
-          Pobierz katalog z przykładami realizacji i cennikiem.
+          Możesz pobrać katalog lub zamówić spersonalizowaną ofertę.
         </p>
-        <Button 
-          onClick={handleDownload}
-          className="bg-white text-navy hover:bg-gray-100 px-8 py-6 text-lg inline-flex items-center"
-        >
-          <Download className="mr-2" size={20} />
-          Pobierz pełną ofertę
-        </Button>
+        <div className="flex justify-center gap-4 flex-wrap">
+          <Button 
+            onClick={handleDownload}
+            className="bg-white text-navy hover:bg-gray-100 px-8 py-6 text-lg inline-flex items-center"
+          >
+            <Download className="mr-2" size={20} />
+            Pobierz katalog
+          </Button>
+          <Button 
+            onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-accent text-white hover:bg-accent/90 px-8 py-6 text-lg inline-flex items-center"
+          >
+            Zamów ofertę
+          </Button>
+        </div>
       </div>
     </section>
   );
